@@ -13,7 +13,7 @@ var catalog = require('./routes/catalog');
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://libuser:password@ds243285.mlab.com:43285/local_library';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://libuser:password@ds243285.mlab.com:43285/local_library';
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
